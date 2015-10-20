@@ -1,5 +1,7 @@
 package rtg;
 
+import rtg.config.ConfigAM;
+import rtg.config.ConfigTFC;
 import rtg.config.RTGConfig;
 import rtg.data.VillageMaterials;
 import rtg.debug.DebugHandler;
@@ -14,8 +16,10 @@ import rtg.world.biome.realistic.buildcraft.RealisticBiomeBCBase;
 import rtg.world.biome.realistic.enhancedbiomes.RealisticBiomeEBBase;
 import rtg.world.biome.realistic.extrabiomes.RealisticBiomeEBXLBase;
 import rtg.world.biome.realistic.highlands.RealisticBiomeHLBase;
+import rtg.world.biome.realistic.terrafirmacraft.RealisticBiomeTFCBase;
 import rtg.world.biome.realistic.thaumcraft.RealisticBiomeTCBase;
 import rtg.world.biome.realistic.vanilla.RealisticBiomeVanillaBase;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -66,13 +70,18 @@ public class RTG {
     
         BiomeBase.init();
         
-        RealisticBiomeVanillaBase.addBiomes();
-        RealisticBiomeBOPBase.addBiomes();
-        RealisticBiomeEBBase.addBiomes();
-        RealisticBiomeEBXLBase.addBiomes();
-        RealisticBiomeHLBase.addBiomes();
-        RealisticBiomeTCBase.addBiomes();
-        RealisticBiomeBCBase.addBiomes();
-        RealisticBiomeAMBase.addBiomes();
+        if (Loader.isModLoaded("terrafirmacraft")) {
+            RealisticBiomeTFCBase.addBiomes();
+        }
+        else {
+            RealisticBiomeVanillaBase.addBiomes();
+            RealisticBiomeBOPBase.addBiomes();
+            RealisticBiomeEBBase.addBiomes();
+            RealisticBiomeEBXLBase.addBiomes();
+            RealisticBiomeHLBase.addBiomes();
+            RealisticBiomeTCBase.addBiomes();
+            RealisticBiomeBCBase.addBiomes();
+            RealisticBiomeAMBase.addBiomes();
+        }
     }
 }

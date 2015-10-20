@@ -12,6 +12,7 @@ public class RTGConfig
 	public static File tcConfigFile;
 	public static File bcConfigFile;
 	public static File amConfigFile;
+	public static File tfcConfigFile;
 
 	public static void init(String configpath)
 	{
@@ -23,6 +24,7 @@ public class RTGConfig
 		tcConfigFile = new File(configpath + "ConfigTC.cfg");
 		bcConfigFile = new File(configpath + "ConfigBC.cfg");
 		amConfigFile = new File(configpath + "ConfigAM.cfg");
+		tfcConfigFile = new File(configpath + "ConfigTFC.cfg");
 
 		ConfigRTG.init(rtgConfigFile);
 		ConfigBOP.init(bopConfigFile);
@@ -32,5 +34,6 @@ public class RTGConfig
 		ConfigTC.init(tcConfigFile);
 		ConfigBC.init(bcConfigFile);
 		ConfigAM.init(amConfigFile);
+		ConfigTFC.init(tfcConfigFile);
 	}
 }

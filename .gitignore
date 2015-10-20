@@ -17,3 +17,5 @@
 /bin
 /README.txt
 /libs/*.jar
+/gradle-build.bat
+/gradle-clean.bat
