@@ -166,7 +166,7 @@ public class ChunkProviderRTG implements IChunkProvider
     	hugeRender = new float[81][256];
     	smallRender = new float[625][256];
     	testHeight = new float[256];
-    	mapGenBiomes = new float[258];
+    	mapGenBiomes = new float[257];
     	borderNoise = new float[256];
     }
     
@@ -407,7 +407,7 @@ public class ChunkProviderRTG implements IChunkProvider
     		}
     	}
 
-    	float river, ocean;
+    	float river;
     	for(i = 0; i < 16; i++)
     	{
     		for(j = 0; j < 16; j++)
@@ -419,7 +419,6 @@ public class ChunkProviderRTG implements IChunkProvider
     				bRand = bRand < 0f ? 0f : bRand > 0.99999f ? 0.99999f : bRand;
     			}
     			
-    			ocean = cmr.getOceanValue(x + i, y + j);
     			l = ((int)(i + 4) * 25 + (j + 4));
     			
     			testHeight[i * 16 + j] = 0f;
@@ -428,8 +427,7 @@ public class ChunkProviderRTG implements IChunkProvider
 
     			if(l == 312)
     			{
-	    			mapGenBiomes[256] = ocean;
-	    			mapGenBiomes[257] = river;
+	    			mapGenBiomes[256] = river;
     			}
     			
     			for(k = 0; k < 256; k++)
@@ -451,7 +449,7 @@ public class ChunkProviderRTG implements IChunkProvider
     	    				mapGenBiomes[k] = smallRender[312][k];
     	    			}
     	    			
-    					testHeight[i * 16 + j] += cmr.calculateRiver(x + i, y + j, river, RealisticBiomeBase.getBiome(k).rNoise(simplex, cell, x + i, y + j, ocean, smallRender[l][k], river + 1f)) * smallRender[l][k];
+    					testHeight[i * 16 + j] += cmr.calculateRiver(x + i, y + j, river, RealisticBiomeBase.getBiome(k).rNoise(simplex, cell, x + i, y + j, smallRender[l][k], river + 1f)) * smallRender[l][k];
     				}
     			}
     		}

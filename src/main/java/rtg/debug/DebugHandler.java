@@ -49,14 +49,6 @@ public final class DebugHandler {
 				details += "Temperature/Rainfall (Static): " + biome.temperature + "/" + biome.rainfall;
 				event.left.add(details);
 				
-				//details = PREFIX;
-				//details += "Noise (X/Z): " + chunkManager.getNoiseAt(posX, posZ);
-				//event.left.add(details);
-
-				details = PREFIX;
-				details += "Ocean Value (X/Z): " + chunkManager.getOceanValue(posX, posZ);
-				event.left.add(details);
-				
 				if (ConfigRTG.enableDebugging)
 				{
 					details = PREFIX;
