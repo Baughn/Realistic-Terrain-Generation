@@ -3,7 +3,8 @@ package rtg.world.biome.realistic.extrabiomes;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
-import rtg.config.ConfigEBXL;
+
+import rtg.config.extrabiomes.ConfigEBXL;
 import rtg.world.biome.BiomeBase;
 import rtg.world.gen.surface.extrabiomes.SurfaceEBXLAlpine;
 import rtg.world.gen.terrain.extrabiomes.TerrainEBXLAlpine;
@@ -19,7 +20,7 @@ public class RealisticBiomeEBXLAlpine extends RealisticBiomeEBXLBase
 	public RealisticBiomeEBXLAlpine()
 	{
 		super(
-			ebxlBiome, BiomeBase.climatizedBiome(BiomeGenBase.river, Climate.ICE),
+			ebxlBiome, BiomeBase.climatizedBiome(BiomeGenBase.frozenRiver, Climate.ICE),
 			new TerrainEBXLAlpine(),
 			new SurfaceEBXLAlpine(topBlock, fillerBlock, false, null, 0.45f)
 		);

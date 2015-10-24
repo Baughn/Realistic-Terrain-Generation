@@ -2,7 +2,8 @@ package rtg.world.biome.realistic.biomesoplenty;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeGenBase;
-import rtg.config.ConfigBOP;
+
+import rtg.config.biomesoplenty.ConfigBOP;
 import rtg.world.biome.BiomeBase;
 import rtg.world.gen.surface.biomesoplenty.SurfaceBOPSnowyConiferousForest;
 import rtg.world.gen.terrain.biomesoplenty.TerrainBOPSnowyConiferousForest;
@@ -18,7 +19,7 @@ public class RealisticBiomeBOPSnowyConiferousForest extends RealisticBiomeBOPBas
 	public RealisticBiomeBOPSnowyConiferousForest()
 	{
 		super(
-			bopBiome, BiomeBase.climatizedBiome(BiomeGenBase.river, Climate.ICE),
+			bopBiome, BiomeBase.climatizedBiome(BiomeGenBase.frozenRiver, Climate.ICE),
 			new TerrainBOPSnowyConiferousForest(),
 			new SurfaceBOPSnowyConiferousForest(topBlock, fillerBlock, false, null, 0.45f, 1.5f, 50f, 60f, 0.4f, 100f, 50f, 1.5f)
 		);

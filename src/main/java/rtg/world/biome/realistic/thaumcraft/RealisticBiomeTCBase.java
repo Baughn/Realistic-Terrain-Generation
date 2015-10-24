@@ -1,9 +1,11 @@
 package rtg.world.biome.realistic.thaumcraft;
 
 import cpw.mods.fml.common.Loader;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
-import rtg.config.ConfigTC;
+
+import rtg.config.thaumcraft.ConfigTC;
 import rtg.world.biome.BiomeBase;
 import rtg.world.biome.realistic.RealisticBiomeBase;
 import rtg.world.gen.surface.SurfaceBase;
@@ -39,7 +41,7 @@ public class RealisticBiomeTCBase extends RealisticBiomeBase
 					String biomeName = tcBiome.biomeName;
 					String biomeClass = tcBiome.getBiomeClass().getName();
 					
-					if (biomeName == "Tainted Land")
+					if (biomeName == "Tainted Land" && biomeClass == "thaumcraft.common.lib.world.biomes.BiomeGenTaint")
 					{
 						if (ConfigTC.generateTCTaintedLand) {
 							BiomeBase.addBiome(
@@ -47,7 +49,7 @@ public class RealisticBiomeTCBase extends RealisticBiomeBase
 							);
 						}
 					}
-					else if (biomeName == "Magical Forest")
+					else if (biomeName == "Magical Forest" && biomeClass == "thaumcraft.common.lib.world.biomes.BiomeGenMagicalForest")
 					{
 						if (ConfigTC.generateTCMagicalForest) {
 							BiomeBase.addBiome(

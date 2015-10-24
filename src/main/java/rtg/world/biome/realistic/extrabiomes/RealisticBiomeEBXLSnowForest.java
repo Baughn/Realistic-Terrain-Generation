@@ -3,7 +3,8 @@ package rtg.world.biome.realistic.extrabiomes;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
-import rtg.config.ConfigEBXL;
+
+import rtg.config.extrabiomes.ConfigEBXL;
 import rtg.world.biome.BiomeBase;
 import rtg.world.gen.surface.extrabiomes.SurfaceEBXLSnowForest;
 import rtg.world.gen.terrain.extrabiomes.TerrainEBXLSnowForest;
@@ -19,7 +20,7 @@ public class RealisticBiomeEBXLSnowForest extends RealisticBiomeEBXLBase
 	public RealisticBiomeEBXLSnowForest()
 	{
 		super(
-			ebxlBiome, BiomeBase.climatizedBiome(BiomeGenBase.river, Climate.ICE),
+			ebxlBiome, BiomeBase.climatizedBiome(BiomeGenBase.frozenRiver, Climate.ICE),
 			new TerrainEBXLSnowForest(0f, 140f, 68f, 200f),
 			new SurfaceEBXLSnowForest(topBlock, fillerBlock, Blocks.stone, Blocks.cobblestone)
 		);

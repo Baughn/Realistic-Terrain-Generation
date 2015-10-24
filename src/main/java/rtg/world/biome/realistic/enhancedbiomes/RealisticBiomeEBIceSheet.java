@@ -2,7 +2,8 @@ package rtg.world.biome.realistic.enhancedbiomes;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
-import rtg.config.ConfigEB;
+
+import rtg.config.enhancedbiomes.ConfigEB;
 import rtg.world.biome.BiomeBase;
 import rtg.world.biome.BiomeBase.BiomeCategory;
 import rtg.world.gen.surface.enhancedbiomes.SurfaceEBIceSheet;
@@ -13,7 +14,7 @@ public class RealisticBiomeEBIceSheet extends RealisticBiomeEBBase
 	public RealisticBiomeEBIceSheet(BiomeGenBase ebBiome)
 	{
 		super(
-			ebBiome, BiomeBase.climatizedBiome(BiomeGenBase.river, Climate.ICE),
+			ebBiome, BiomeBase.climatizedBiome(BiomeGenBase.frozenRiver, Climate.ICE),
 			new TerrainEBIceSheet(),
 			new SurfaceEBIceSheet(Blocks.ice, Blocks.packed_ice)
 		);

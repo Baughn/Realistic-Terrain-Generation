@@ -2,7 +2,8 @@ package rtg.world.biome.realistic.biomesoplenty;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeGenBase;
-import rtg.config.ConfigBOP;
+
+import rtg.config.biomesoplenty.ConfigBOP;
 import rtg.world.biome.BiomeBase;
 import rtg.world.biome.BiomeBase.BiomeCategory;
 import rtg.world.gen.surface.biomesoplenty.SurfaceBOPAlpsForest;
@@ -19,7 +20,7 @@ public class RealisticBiomeBOPAlpsForest extends RealisticBiomeBOPBase
 	public RealisticBiomeBOPAlpsForest()
 	{
 		super(
-			bopBiome, BiomeBase.climatizedBiome(BiomeGenBase.river, Climate.ICE),
+			bopBiome, BiomeBase.climatizedBiome(BiomeGenBase.frozenRiver, Climate.ICE),
 			new TerrainBOPAlpsForest(),
 			new SurfaceBOPAlpsForest(topBlock, fillerBlock, false, null, 0.45f)
 		);
